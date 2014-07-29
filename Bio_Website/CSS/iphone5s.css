@@ -1,0 +1,137 @@
+title {font-family: helvetica;
+
+}
+
+h1 {
+  color: black;
+  font-size: 64px;
+  font-family: helvetica;
+  text-align: center;
+  text-shadow: 2px 2px 3px #666666;
+  font-weight: lighter;
+}
+p{
+  color: black;
+  font-family: helvetica;
+  text-align: justify;
+  font-weight: lighter;
+}
+
+img.one{
+  height: 75px;
+  width: 75px;
+}
+img.two{
+  height: 75px;
+  width: 75px;
+}
+img.three{
+  height: 75px;
+  width: 75px;
+}
+img.four{
+  height: 75px;
+  width: 75px;
+}
+img.five{
+  height: 75px;
+  width: 75px;
+}
+img.six{
+  height: 75px;
+  width: 75px;
+}
+img.seven{
+  height: 75px;
+  width: 75px;
+}
+img.eight{
+  height: 75px;
+  width: 75px;
+}
+
+img.nine {
+  height: 300px;
+  width: 200px ;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+a {
+  text-align: relative;
+  color: black;
+  font-family: helvetica;
+  text-shadow: 2px 2px 3px #666666;
+  font-weight: lighter;
+}
+div.one {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.two {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.three {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.four {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  text-align: justify;
+}
+div.five {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.six {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.seven {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+div.eight {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  position: relative;
+  text-align: justify;
+}
+p {
+  color: black;
+  display: inline-block;
+  font-family: helvetica;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  position: relative;
+  text-align: justify;
+  font-weight: lighter;
+}
+
+h2{color: black;
+  font-family: helvetica;
+  text-align: center;
+  text-shadow: 1px 1px 2px #666666;
+font-weight: lighter;}
