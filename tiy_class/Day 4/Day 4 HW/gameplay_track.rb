@@ -1,19 +1,18 @@
 require './user_horse.rb'
 require './villians.rb'
 @gameon = true
-@test_cheat = gets.chomp 
 
-# puts "Would you like to play the Game Horse Racer?"
-# puts "Yes or No"
-# play = gets.chomp.downcase 
-#   if play == "yes"
-#     then puts "Let's Play!"
-#     else play == "no"
-#       puts "Okay perhaps another time!"
-#   end
-# end
+# @test_cheat = gets.chomp 
 
-puts "What do you want to name your horse?"
+puts "Can you defeat the Dark Lord and his followers?"
+play = gets.chomp.downcase
+if play == "yes"
+  then puts "Let's Play!"
+else play == "no"
+   puts "Okay, maybe some other time!"
+end
+
+puts "Name your wizard?"
 
 @user1 = User_Horse.new
 @user1.name = gets.chomp
@@ -22,58 +21,76 @@ puts "What do you want to name your horse?"
 @villian1.name = "Voldemort"
 
 @villian2 = Villian.new
-@villian2.name = "TheJoker"
+@villian2.name = "Death Eater"
 
 @villian3 = Villian.new
-@villian3.name = "Hannibal"
+@villian3.name = "Bellatrix Lestrange"
 
 
+# def cheat1
+#   puts @user1.name
+# @test_cheat = gets.chomp 
+#   if @test_cheat == "patronus"
+#   then @user1.cheat1
+# else @user1.move_forward
+#   end 
+# end
+
+# def cheat2
+#   puts @user1.name
+# @test_cheat = gets.chomp 
+#   if @test_cheat == "crucio"
+#   then @user1.cheat2
+#   else @user1.move_forward
+#   end
+# end 
+
+# def cheat3
+#   puts @user1.name
+# @test_cheat = gets.chomp 
+#   if @test_cheat == "avada kedavra"
+#   then @user1.cheat3
+#   else @user1.move_forward
+#   end
+# end
 
 
 def villian_race
 puts system "clear"
 puts @user1.name
-if @test_cheat == "boost"
-  then @user1.cheat
+
+
+  if @test_cheat == "patronus"
+  then @user1.cheat1
 else @user1.move_forward
-end
-# @user1.move_forward
-puts @user1.position
-@user1.track
+  end 
+  
+
+# puts @user1.position
+# @user1.track
 puts @user1.track
 
 puts @villian1.name
 @villian1.move_forward
-# puts villian1.position
-@villian1.track
+
+# @villian1.track
 puts @villian1.track
 
 puts @villian2.name
 @villian2.move_forward
-# puts villian2.position
-@villian2.track
+
+# @villian2.track
 puts @villian2.track
 
 puts @villian3.name
 @villian3.move_forward
-# puts villian3.position
-@villian3.track
+
+# @villian3.track
 puts @villian3.track
 end 
 
-# def user_race
-# puts @user1.name
-# @cheat == "boost"
-# @test_cheat = gets.chomp
-#   if @cheat == @test_cheat
-#   then @user1.cheat
-#   else@user1.move_forward
-#   end
-# end
-
-
 def gets_userinput
-  gets.chomp
+  @test_cheat = gets.chomp 
 end
   
 def race_end 
@@ -88,23 +105,10 @@ elsif @villian3.position >= 25
 end
 end
 
-# def end_game 
-#   @gameon == false 
-# case @gameon
-#   when @user1.position >= 25
-#     puts "Game Over"
-#   when @villian1.position >= 25
-#     puts "Game Over"
-#   when @villian2.position >= 25
-#     puts "Game Over"
-#   when @villian3.position >= 25
-#     puts "Game Over"
-#   end
-#   end
-# end
-
-
 while @gameon == true
+  # cheat1
+  # cheat2
+  # cheat3
   villian_race
   race_end
   gets_userinput

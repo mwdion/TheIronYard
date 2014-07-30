@@ -14,7 +14,7 @@ class User_Horse
       self.track = self.position.times{print "="} 
   end
   def cheat1 
-    self.position += rand (6..10)
+    self.position += rand (3..6)
   end
   # def cheat2
   #   self.position += rand (4..8)
