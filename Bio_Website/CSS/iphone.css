@@ -1,5 +1,5 @@
 title {font-family: helvetica;}
-
+a:hover {text-decoration: underline; }
 h1 {
   color: black;
   font-size: 64px;
@@ -12,6 +12,10 @@ p{
   color: black;
   font-family: helvetica;
   text-align: justify;
+}
+img.one{
+  height: 75px;
+  width: 75px;
 }
 img {
   height: 75px;
@@ -88,6 +92,9 @@ p {
   position: relative;
   text-align: justify;
   font-weight: lighter;
+}
+p::first-letter{
+  font-size: 200%
 }
 
 h2{

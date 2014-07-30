@@ -1,4 +1,4 @@
-
+a:hover {text-decoration: underline; }
 
 title {
 color: white;
@@ -101,9 +101,9 @@ h2 {
   font-weight: lighter;
 }
 
-p.intro:first-letter {
+/*p.intro:first-letter {
   font-size: 200%;}
-  p.intro:first-line {font-weight: bold;}
+  p.intro:first-line {font-weight: bold;}*/
 
 p{
   color: black;
