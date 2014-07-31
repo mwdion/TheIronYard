@@ -1,0 +1,42 @@
+div.header { 
+width: 100%;
+background-color: yellow;
+margin: 0;
+text-align: center;
+font-family: helvetica;
+font-size: 36;
+color: white;
+}
+
+.nav_bar ul {width:100%;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
+    display:inline-block;
+    background-color:#62564A;
+    text-align:center;
+    font-family: helvetica; 
+}
+
+.nav_bar li {display:inline;
+}
+
+.na_bar a {
+}
+h1 {font-family: helvetica}
+p {font-family: helvetica}
+
+.footer {
+  text-decoration: none;
+  font-family: helvetica;
+  color: black;
+  font-size: 18;
+  text-align: center;
+}
+
+.address{
+  text-align: center;
+  font-size: 18;
+  font-family: helvetica;
+  color: black;
+}
