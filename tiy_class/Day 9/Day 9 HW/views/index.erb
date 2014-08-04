@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="blog.css">
+
+<a href="/create_blogpost">Create Blog Post</a>
+<br>
+<% @blogpost.each do |blogpost| %>
+<a href="/show_blogpost/<%= blogpost.id %>">
+<%= blogpost.title %> <br>
+<%= blogpost.content %>
+</a>
+<a href="/edit_blogpost/<%= blogpost.id %>">Edit</a>
+<br>
+<% end %>

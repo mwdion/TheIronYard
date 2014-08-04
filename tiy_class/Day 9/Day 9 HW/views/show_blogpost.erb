@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="blog.css">
+
+
+<h1><%= @blogpost.title %></h1>
+    <p><%= @blogpost.content %></p>
+ 
+<form action="/delete_blogpost/<%= @blogpost.id %>" method="post">
+  <input type= "hidden" name="_method" value="delete">
+  <input type= "submit" value="delete">
+</form>
+
+
+
+    <a href="/">Back</a>
