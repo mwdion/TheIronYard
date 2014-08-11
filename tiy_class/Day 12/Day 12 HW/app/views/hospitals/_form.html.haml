@@ -1,0 +1,16 @@
+= form_for @hospital do |f|
+  = if f.object.errors.messages.length > 0
+    <!-- Render the errors to the user -->
+    = f.object.errors.messages.inspect  
+    %br
+      -f.object.errors.messages.each do |key, value| 
+        -value.each do |message| 
+          = key = message 
+          %br
+  %p= f.label :name
+  %p= f.text_field :name
+  %br
+  %p= f.label :description
+  %p= f.text_area :description, size: "60X60"
+  %br
+  %p= f.submit

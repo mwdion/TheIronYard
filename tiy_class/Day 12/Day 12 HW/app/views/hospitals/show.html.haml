@@ -1,0 +1,17 @@
+%h1 Hospital Profile
+%p Name: #{@hospital.name}
+%p Description: #{@hospital.description}
+%br
+= link_to "Add Patient", new_hospital_patient_path(@hospital)
+%br
+-@hospital.patients.each do |patient| 
+  %br
+  = link_to "#{patient.last_name}, #{patient.first_name}", hospital_patient_path(@hospital, patient)
+  = link_to "| Edit Patient |", edit_hospital_patient_path(@hospital, patient)
+  = link_to "| Delete Patient |", hospital_patient_path(@hospital, patient), method: :delete
+%br
+%h3 #{link_to "| Hospital Hub ", hospitals_path(@hosptial)}#{link_to "| Tracker Home |", root_path}
+
+
+      
+

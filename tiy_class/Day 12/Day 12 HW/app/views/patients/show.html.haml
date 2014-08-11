@@ -1,0 +1,36 @@
+%h1 Patient Profile
+%p First Name: #{@patient.first_name}
+%p Last Name: #{@patient.last_name}
+%p Gender: #{@patient.gender}
+%p Date of Birth: #{@patient.DOB}
+%p Notes: #{@patient.description}
+%p Status: #{@patient.workflow_state}
+- if @patient.workflow_state == "waiting"
+  = link_to "assessed", assessed_hospital_patient_path(@hospital, @patient), method: :put
+  = link_to "xrayed", xrayed_hospital_patient_path(@hospital, @patient), method: :put
+  = link_to "operated", operated_hospital_patient_path(@hospital, @patient), method: :put
+- elsif @patient.workflow_state == "assessed"
+  = link_to "xrayed", xrayed_hospital_patient_path(@hospital, @patient), method: :put
+  = link_to "operated", operated_hospital_patient_path(@hospital, @patient), method: :put
+  = link_to "paid", paid_hospital_patient_path(@hospital, @patient), method: :put
+- elsif @patient.workflow_state == "xrayed"
+  = link_to "paid", paid_hospital_patient_path(@hospital, @patient), method: :put
+- elsif @patient.workflow_state == "operated"
+  = link_to "paid", paid_hospital_patient_path(@hospital, @patient), method: :put
+- elsif @patient.workflow_state == "paid"
+  = link_to "discharged", discharged_hospital_patient_path(@hospital, @patient), method: :put
+- else @patient.workflow_state == "discharged"
+  = link_to "|Add Final Notes|", edit_hospital_patient_path(@hospital, @patient) 
+%br 
+%br
+= link_to "Add Medication", new_hospital_patient_medication_path(@hospital, @patient)
+%br
+- @patient.medications.each do |medication| 
+  = link_to "| #{medication.name} ", hospital_patient_medications_path(@hospital, @patient, medication)
+  = link_to "| Edit Medication |", edit_hospital_patient_medication_path(@hospital, @patient, medication)
+  = link_to " Delete Medication |", hospital_patient_medication_path(@hospital, @patient, medication), method: :delete 
+%br 
+%br
+%h3 #{link_to "| Hospital Homepage (back) ", hospital_path(@hospital)}#{link_to "| Hospital Hub ", hospitals_path(@hosptial)} #{link_to "| Tracker Home |", root_path}
+%h3 
+%h

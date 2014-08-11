@@ -1,0 +1,15 @@
+%h1 Welcome to the Hospital Hub
+= link_to "Create Hospital", new_hospital_path
+%ul
+  Hospitals
+  - @hospital.each do |hospital|
+    %li
+      = link_to "#{hospital.name}:", hospital_path(hospital)
+      = hospital.description
+      %br
+      = link_to "| Edit Hospital |", edit_hospital_path(hospital)
+      = link_to "| Delete Hospital |", hospital_path(hospital), method: :delete
+      = link_to "| Tracker Home |", root_path
+%h3 #{link_to "| Tracker Home |", root_path}
+
+
