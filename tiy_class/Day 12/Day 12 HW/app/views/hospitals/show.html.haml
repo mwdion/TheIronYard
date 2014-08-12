@@ -8,7 +8,7 @@
     %p= doctor.name
     = link_to "| Delete Doctor |", delete_doctor_hospital_path(@hospital, doctor_id: doctor.id), method: :delete
   %br
-= link_to "Add Patient", new_hospital_patient_path(@hospital)
+= link_to "| Add Patient |", new_hospital_patient_path(@hospital)
 %br
 = form_for @doctor, url: create_doctor_hospital_path(@hospital) do |f|
   %p= f.label :name
