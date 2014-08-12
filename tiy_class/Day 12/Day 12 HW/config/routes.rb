@@ -6,7 +6,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources :hospitals do
+    member do
+      post :create_doctor
+      delete :delete_doctor
+    end
     resources :patients do 
+      member do
+        post :create_doctor
+        delete :delete_doctor
+      end
       resources :medications do 
       end
       member do

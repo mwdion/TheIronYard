@@ -20,13 +20,24 @@
 - elsif @patient.workflow_state == "paid"
   = link_to "discharged", discharged_hospital_patient_path(@hospital, @patient), method: :put
 - else @patient.workflow_state == "discharged"
-  = link_to "|Add Final Notes|", edit_hospital_patient_path(@hospital, @patient) 
+  = link_to "| Add Final Notes |", edit_hospital_patient_path(@hospital, @patient) 
 %br 
+%br
+- @patient.doctors.each do |doctor|
+  - if doctor.name 
+    %p= doctor.name
+    = link_to "| Delete Doctor |", delete_doctor_hospital_patient_path(@hospital, @patient, doctor_id: doctor.id), method: :delete
+  %br
+= form_for @doctor, url: create_doctor_hospital_patient_path(@hospital, @patient) do |f|
+  %p= f.label :name
+  %p= f.text_field :name
+  %p= f.submit
+%br
 %br
 = link_to "Add Medication", new_hospital_patient_medication_path(@hospital, @patient)
 %br
 - @patient.medications.each do |medication| 
-  = link_to "| #{medication.name} ", hospital_patient_medications_path(@hospital, @patient, medication)
+  = link_to "| #{medication.name} ", hospital_patient_medication_path(@hospital, @patient, medication)
   = link_to "| Edit Medication |", edit_hospital_patient_medication_path(@hospital, @patient, medication)
   = link_to " Delete Medication |", hospital_patient_medication_path(@hospital, @patient, medication), method: :delete 
 %br 

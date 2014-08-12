@@ -29,7 +29,7 @@ before_action :find_medication, only: [:show, :edit, :update, :destroy]
   end
 
   def update
-    @medications.update_attributes medication_params
+    @medication.update_attributes medication_params
     redirect_to hospital_patient_path(@hospital, @patient)
   end
 

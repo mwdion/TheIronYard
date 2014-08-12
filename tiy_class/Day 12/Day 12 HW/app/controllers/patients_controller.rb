@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
 before_action :find_hospital
-before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :assessed, :xrayed, :operated, :paid, :discharged]
+before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :assessed, :xrayed, :operated, :paid, :discharged,:find_doctor, :create_doctor, :delete_doctor]
 
  def index
     @patient = Patient.all 
@@ -12,6 +12,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
   end
 
   def show
+    @doctor = @patient.doctors.new 
   end
 
   def create
@@ -66,13 +67,33 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     redirect_to hospital_patient_path(@hospital, @patient)
   end
 
+  def create_doctor
+    @doctor = @patient.doctors.create doctor_params
+    redirect_to hospital_patient_path
+  end
+
+  def delete_doctor
+    @hospital = Hospital.find params[:hospital_id]
+    @patient = Patient.find params[:id]
+    @doctor = Doctor.find params[:doctor_id]
+    @doctor.delete
+    redirect_to hospital_patient_path
+  end
+
   private
+  def find_doctor
+    @doctor = Doctor.find params[:doctor_id]
+  end
   def find_patient
     @patient = Patient.find params[:id]
   end
 
   def find_hospital
     @hospital = Hospital.find params[:hospital_id]
+  end
+
+  def doctor_params
+    params.require(:doctor).permit(:name)
   end
 
   def patients_params
