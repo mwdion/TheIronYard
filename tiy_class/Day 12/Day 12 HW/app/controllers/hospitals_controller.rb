@@ -1,4 +1,5 @@
 class HospitalsController < ApplicationController
+before_action :authenticate_user!, only: [:show, :new, :edit, :update, :destroy] 
 before_action :find_hospital, only: [:show, :edit, :update, :destroy, :find_doctor, :create_doctor, :delete_doctor]
 before_action :find_doctor, only: [:delete_doctor] 
   
@@ -8,7 +9,7 @@ before_action :find_doctor, only: [:delete_doctor]
   end
 
   def show
-    @doctor = @hospital.doctors.new 
+    @doctor = @hospital.doctors.new
   end
 
   def new

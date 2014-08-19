@@ -1,0 +1,6 @@
+%h1 Task Manager Groups Index
+= @groups.each do |group|
+ = group.name
+= link_to "Edit Group", edit_group_path(@groups)
+
+= link_to "Add Group", new_group_path
