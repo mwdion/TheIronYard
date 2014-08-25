@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     end
   end
 
-
+get '/patients' => 'patients#search_patients' 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,3 +1,10 @@
 %h1 New Patient
 = render 'form'
-%h3 #{link_to "| Tracker Home ", root_path}#{link_to "| Hospital Homepage (back) |", hospital_path(@hospital)}
+%ul.breadcrumb
+  %li
+    %a{:href => "../"} Tracker Home
+  %li
+    %a{:href => "/hospitals"} Hospital Hub
+  %li
+    = link_to 'Hospital Homepage (back)', hospital_path(@hospital)
+  %li.active New Patient

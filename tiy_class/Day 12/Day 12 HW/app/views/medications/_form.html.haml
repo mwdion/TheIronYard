@@ -7,11 +7,20 @@
         -value.each do |message| 
           = key = message 
           %br
-  %p= f.label :name
-  %p= f.text_field :name
+  %h4= f.label :name
+  %p= f.text_field :name, class: 'form-control focusedInput', placeholder: 'Add Name Here...'
   %br
-  %p= f.label :description
-  %p= f.text_area :description, size: "60X60"
+  %h4= f.label :description
+  %p= f.text_area :description, class: 'form-control ', placeholder: 'Description...', rows: '3'
   %br
-  %p= f.submit
-  %h3  #{link_to "| Patient Profile (back) ", hospital_patient_path(@hospital,@patient)}#{link_to "| Hospital Homepage ", hospital_path(@hospital)} #{link_to "| Tracker Home |", root_path}#{link_to " Hospital Hub |", hospitals_path(@hosptial)}
+  %p=f.submit "Add Medication", class: 'btn btn-success btn-block'
+  %ul.breadcrumb
+    %li
+      %a{:href => "../"} Tracker Home
+    %li
+      %a{:href => "/hospitals"} Hospital Hub
+    %li
+      = link_to 'Hospital Homepage', hospital_path(@hospital)
+    %li
+      = link_to 'Patient Profile (back)', hospital_patient_path(@hospital,@patient)
+    %li.active New Medication

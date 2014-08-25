@@ -7,10 +7,10 @@
         -value.each do |message| 
           = key = message 
           %br
-  %p= f.label :name
-  %p= f.text_field :name
+  %h4= f.label :name
+  %p= f.text_field :name, class: 'form-control focusedInput', placeholder: 'Add Name Here...'
   %br
-  %p= f.label :description
-  %p= f.text_area :description, size: "60X60"
+  %h4= f.label :description
+  %p= f.text_area :description, class: 'form-control ', placeholder: 'Description...', rows: '3'
   %br
-  %p= f.submit
+  %p=f.submit "Create Hospital", class: 'btn btn-success btn-block'

@@ -6,10 +6,12 @@ before_action :find_doctor, only: [:delete_doctor]
   
   def index
     @hospital = Hospital.all
+    @patient = Patient.all
   end
 
   def show
     @doctor = @hospital.doctors.new
+    @patient = Patient.all
   end
 
   def new

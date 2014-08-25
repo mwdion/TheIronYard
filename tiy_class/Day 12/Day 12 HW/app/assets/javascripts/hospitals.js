@@ -1,39 +1,50 @@
-$$(document).ready(function() {
-//   $('input[type=submit]').attr('disabled', 'diabled');
-//   $('input').on('keyup', function(){
-//     var validated = true;
-//     if($('#hospital_name').length {
-//       if($('#hospital_name').val().length < 4;
-//         if(validated){
-//           $('input[type=submit]').removeAttr('disabled');
-//         } else {
-//           $('input[type=submit]').attr('disabled', 'disabled');
-//         }
-//         }
-//     })
-//   })
-// }
-function isEmpty(){
-if (isEmpty($('#hospital_name'))) {
-  $('input[type=submit]').attr('disabled',true);
-    $('input').keyup(function(){
-        if($('#hospital_name').val().length !=0)
-            $('input[type=submit]').attr('disabled', false);            
-        else
-            $('input[type=submit]').attr('disabled',true);
+$(document).ready(function() {
+  $('#hospital_name').hover( function(){
+    console.log("click the button")
+    if($('#hospital_name').val()==""){
+      $('.notice').show()
+      $('.notice').html("Name is not filled out properly!")
+      $('.notice').fadeOut(1000)
+      console.log("somestuff")
+      $('input[type=submit]').attr('disabled', 'disabled');
+    }
+    else {
+      $('input[type=submit]').removeAttr('disabled', 'disabled');
+    }
+  })
+})
+$(document).ready(function() {
+  $('#hospital_description').hover( function(){
+    console.log("click the button")
+    if($('#hospital_description').val()==""){
+      $('.notice').show()
+      $('.notice').html("The description needs to be filled out!")
+      $('.notice').fadeOut(1000)
+      console.log("somestuff")
+      $('input[type=submit]').attr('disabled', 'disabled');
+    }
+    else {
+      $('input[type=submit]').removeAttr('disabled', 'disabled');
+    }
+  })
+})
+$(document).ready(function() {
+$(".search_patients").click( function() {
+    console.log("hola");
+    console.log($('.patient_search').val())
+    $.ajax({
+      url: "/patients",
+      dataType: "script",
+      type: "GET",
+      data: {q: $('.patient_search').val()}
     })
-});
-$(selector for your message).slideDown(function() {
-    setTimeout(function() {
-        $(selector for your message).slideUp();
-    }, 5000);
-});
-$("input[type=submit]").click(function(){
-  $("p").fadeOut();
-});
-
-  }
-}
-
-     
- }
+  })
+  })
+$(document).ready(function() {
+  $(".new_page").click(function () {
+    console.log("sup bro")
+    var new_page = $(this).html()
+    $(".hospital_list").addClass("hidden")
+    $(".group_" + new_page).removeClass("hidden")
+   })
+  })

@@ -1,13 +1,18 @@
 
 class PatientsController < ApplicationController
 before_action :authenticate_user!
-before_action :find_hospital
+before_action :find_hospital, except: [:search_patients]
 before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :assessed, :xrayed, :operated, :paid, :discharged,:find_doctor, :create_doctor, :delete_doctor]
 
- def index
+  def index
     @patient = Patient.all 
   end
   
+  def search_patients
+    @patient = Patient.where("first_name LIKE ?", "%#{params[:q]}%")
+    respond_to do |format|
+      format.js
+  end
   
   def new
     @patient = Patient.new
@@ -23,6 +28,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     redirect_to hospital_patient_path(@hospital, @patient)
     else
     render :new
+      end
     end
   end
 
@@ -41,32 +47,56 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
 
   def waiting
     @patient.waiting!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def assessed
     @patient.assess!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def xrayed
     @patient.xray!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def operated
     @patient.operate!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def paid
     @patient.pay!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def discharged
     @patient.discharge!
+    respond_to do |format|
+      format.js
+      format.html
     redirect_to hospital_patient_path(@hospital, @patient)
+    end
   end
 
   def create_doctor
@@ -89,17 +119,13 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
   def find_patient
     @patient = Patient.find params[:id]
   end
-
   def find_hospital
     @hospital = Hospital.find params[:hospital_id]
   end
-
   def doctor_params
     params.require(:doctor).permit(:name)
   end
-
   def patients_params
     params.require(:patient).permit(:first_name, :last_name, :DOB, :gender, :description, :workflow_state)
   end
-
 end

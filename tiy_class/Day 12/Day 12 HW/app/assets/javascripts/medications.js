@@ -1,35 +1,39 @@
 $(document).ready(function() {
-  // $('input[type=submit]').attr('disabled', 'diabled');
-  // $('input').on('keyup', function(){
-  //   var validated = true;
-  //   if($('#medication_name').length {
-  //     if($('#medication_name').val().length < 4;
-  //       if(validated){
-  //         $('input[type=submit]').removeAttr('disabled');
-  //       } else {
-  //         $('input[type=submit]').attr('disabled', 'disabled');
-  //       }
-  if (isEmpty($('#medication_name'))) {
-  $('input[type=submit]').attr('disabled',true);
-    $('input').keyup(function(){
-        if($('#medication_name').val().length !=0)
-            $('input[type=submit]').attr('disabled', false);            
-        else
-            $('input[type=submit]').attr('disabled',true);
-    })
-});
+  $('#medication_name').hover( function(){
+    console.log("click the button")
+    if($('#medication_name').val()==""){
+      $('.notice').show()
+      $('.notice').html("Medication name needs to be entered!")
+      $('.notice').fadeOut(1000)
+      console.log("somestuff")
+      $('input[type=submit]').attr('disabled', 'disabled');
+    }
+    else {
+      $('input[type=submit]').removeAttr('disabled', 'disabled');
+    }
+  })
+})
+$(document).ready(function() {
+  $('#medication_description').hover( function(){
+    console.log("click the button")
+    if($('#medication_description').val()==""){
+      $('.notice').show()
+      $('.notice').html("Medication description needs to entered!")
+      $('.notice').fadeOut(1000)
+      console.log("somestuff")
+      $('input[type=submit]').attr('disabled', 'disabled');
+    }
+    else {
+      $('input[type=submit]').removeAttr('disabled', 'disabled');
+    }
+  })
+})
 
-$(selector for your message).slideDown(function() {
-    setTimeout(function() {
-        $(selector for your message).slideUp();
-    }, 5000);
-});
-$("input[type=submit]").click(function(){
-  $("p").fadeOut();
-});
-
-  }
-
-
-  
-}
+$(document).ready(function() {
+  $(".new_page").click(function () {
+    console.log("sup bro")
+    var new_page = $(this).html()
+    $(".medication_list").addClass("hidden")
+    $(".group_" + new_page).removeClass("hidden")
+   })
+  })
