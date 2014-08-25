@@ -4,23 +4,8 @@
 %p Gender: #{@patient.gender}
 %p Date of Birth: #{@patient.DOB}
 %p Notes: #{@patient.description}
-%p Status: #{@patient.workflow_state}
-- if @patient.workflow_state == "waiting"
-  = link_to "assessed", 'javascript:void(0);', class: "put_status btn btn-xs btn-primary", workflow_state: "assessed"
-  = link_to "xrayed", 'javascript:void(0);', class: "put_status btn btn-xs btn-info", workflow_state: "xrayed"
-  = link_to "operated", 'javascript:void(0);', class: "put_status btn btn-xs btn-danger", workflow_state: "operated"
-- elsif @patient.workflow_state == "assessed"
-  = link_to "xrayed", 'javascript:void(0);', class: "put_status btn btn-xs btn-info", workflow_state: "xrayed"
-  = link_to "operated", 'javascript:void(0);', class: "put_status btn btn-xs btn-danger", workflow_state: "operated"
-  = link_to "paid", 'javascript:void(0);', class: "put_status btn btn-xs btn-warning", workflow_state: "paid"
-- elsif @patient.workflow_state == "xrayed"
-  = link_to "paid", 'javascript:void(0);', class: "put_status btn btn-xs btn-warning", workflow_state: "paid"
-- elsif @patient.workflow_state == "operated"
-  = link_to "paid", 'javascript:void(0);', class: "put_status btn btn-xs btn-warning", workflow_state: "paid"
-- elsif @patient.workflow_state == "paid"
-  = link_to "discharged", 'javascript:void(0);', class: "put_status btn btn-xs btn-success", workflow_state: "discharged"
-- else @patient.workflow_state == "discharged"
-  = link_to "| Add Final Notes |", edit_hospital_patient_path(@hospital, @patient), class: "put_status btn btn-xs btn-success"
+%ul.put_status
+  =render "workflow_partial", patient: @patient 
 %input{type: "hidden", value: @hospital.id, class: "hospital_id"}
 %input{type: "hidden", value: @patient.id, class: "patient_id"}
 %br 
@@ -28,15 +13,17 @@
 = link_to "| Edit Patient |", edit_hospital_patient_path(@hospital, @patient), class: 'btn btn-s btn-warning'
 = link_to "| Delete Patient |", hospital_patient_path(@hospital, @patient), method: :delete, class: 'btn btn-s btn-danger'
 %br
+%br
 - @patient.doctors.each do |doctor|
   - if doctor.name 
     %p= doctor.name
-    = link_to "| Delete Doctor |", delete_doctor_hospital_patient_path(@hospital, @patient, doctor_id: doctor.id), method: :delete
+    = link_to "| Delete Doctor |", delete_doctor_hospital_patient_path(@hospital, @patient, doctor_id: doctor.id), method: :delete, class: "btn btn-xs btn-danger"
+    %br
   %br
-/ = form_for @doctor, url: create_doctor_hospital_patient_path(@hospital, @patient) do |f|
-/   %h4= f.label :name
-/   %p= f.text_field :name, class: 'form-control focusedInput', placeholder: 'Add Name Here...'
-/   %p= f.submit "Add Doctor", class: 'btn btn-success btn-block'
+= form_for @doctor, url: create_doctor_hospital_patient_path(@hospital, @patient) do |f|
+  = f.label :name
+  = f.text_field :name, class: 'form-control focusedInput', placeholder: 'Add Name Here...'
+  = f.submit "Add Doctor", class: 'btn btn-success btn-block'
 %br
 %br
 = link_to "Add Medication", new_hospital_patient_medication_path(@hospital, @patient), class: 'btn btn-success'

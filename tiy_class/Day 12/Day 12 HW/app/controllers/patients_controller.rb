@@ -9,9 +9,10 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
   end
   
   def search_patients
-    @patient = Patient.where("first_name LIKE ?", "%#{params[:q]}%")
+    @patient = Patient.where("last_name LIKE ?", "%#{params[:q]}%")
     respond_to do |format|
       format.js
+    end
   end
   
   def new
@@ -28,7 +29,6 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     redirect_to hospital_patient_path(@hospital, @patient)
     else
     render :new
-      end
     end
   end
 
@@ -49,8 +49,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.waiting!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 
@@ -58,8 +57,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.assess!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 
@@ -67,8 +65,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.xray!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 
@@ -76,8 +73,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.operate!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 
@@ -85,8 +81,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.pay!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 
@@ -94,8 +89,7 @@ before_action :find_patient, only: [:show, :edit, :update, :destroy, :waiting, :
     @patient.discharge!
     respond_to do |format|
       format.js
-      format.html
-    redirect_to hospital_patient_path(@hospital, @patient)
+      format.html { redirect_to hospital_patient_path(@hospital, @patient) }
     end
   end
 

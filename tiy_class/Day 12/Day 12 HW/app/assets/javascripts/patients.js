@@ -40,10 +40,11 @@ $(document).ready(function() {
   $(".put_status").click(function (){
     var hospital_id = $(".hospital_id").val()
     var patient_id = $(".patient_id").val()
+    console.log("hi")
     var workflow_state = $(this).attr("workflow_state")
     $.ajax({
-      url: "/hospitals/"+ hospital_id +"/patients/"+ patient_id +"/workflow_state/",
-      type: "patch",
+      url: "/hospitals/"+ hospital_id +"/patients/"+ patient_id + "/" + workflow_state,
+      type: "put",
       dataType: "script",
     })
   })
