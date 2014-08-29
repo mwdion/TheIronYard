@@ -3,458 +3,187 @@
   %head
     %title hw_tracker
     = stylesheet_link_tag    'application', media: 'all'#, 'data-turbolinks-track' => true
-    = javascript_include_tag 'application',#, 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'#, 'data-turbolinks-track' => true
     = csrf_meta_tags
-%p.notice= notice
-%p.alert= alert
   %body
-  #wrapper
-    / Navigation
-    %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-      / Brand and toggle get grouped for better mobile display
-      .navbar-header
-        %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
-          %span.sr-only Toggle navigation
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
-        %a.navbar-brand{:href => "index.html"} SB Admin
-      / Top Menu Items
-      %ul.nav.navbar-right.top-nav
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %i.fa.fa-envelope
-            %b.caret
-          %ul.dropdown-menu.message-dropdown
-            %li.message-preview
-              %a{:href => "#"}
-                .media
-                  %span.pull-left
-                    %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
-                  .media-body
-                    %h5.media-heading
-                      %strong John Smith
-                    %p.small.text-muted
-                      %i.fa.fa-clock-o
-                      Yesterday at 4:32 PM
-                    %p Lorem ipsum dolor sit amet, consectetur...
-            %li.message-preview
-              %a{:href => "#"}
-                .media
-                  %span.pull-left
-                    %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
-                  .media-body
-                    %h5.media-heading
-                      %strong John Smith
-                    %p.small.text-muted
-                      %i.fa.fa-clock-o
-                      Yesterday at 4:32 PM
-                    %p Lorem ipsum dolor sit amet, consectetur...
-            %li.message-preview
-              %a{:href => "#"}
-                .media
-                  %span.pull-left
-                    %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
-                  .media-body
-                    %h5.media-heading
-                      %strong John Smith
-                    %p.small.text-muted
-                      %i.fa.fa-clock-o
-                      Yesterday at 4:32 PM
-                    %p Lorem ipsum dolor sit amet, consectetur...
-            %li.message-footer
-              %a{:href => "#"} Read All New Messages
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %i.fa.fa-bell
-            %b.caret
-          %ul.dropdown-menu.alert-dropdown
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-default Alert Badge
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-primary Alert Badge
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-success Alert Badge
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-info Alert Badge
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-warning Alert Badge
-            %li
-              %a{:href => "#"}
-                Alert Name
-                %span.label.label-danger Alert Badge
-            %li.divider
-            %li
-              %a{:href => "#"} View All
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            %i.fa.fa-user
-            John Smith
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"}
-                %i.fa.fa-fw.fa-user
-                Profile
-            %li
-              %a{:href => "#"}
-                %i.fa.fa-fw.fa-envelope
-                Inbox
-            %li
-              %a{:href => "#"}
-                %i.fa.fa-fw.fa-gear
-                Settings
-            %li.divider
-            %li
-              %a{:href => "#"}
-                %i.fa.fa-fw.fa-power-off
-                Log Out
-      / Sidebar Menu Items - These collapse to the responsive navigation menu on small screens
-      .collapse.navbar-collapse.navbar-ex1-collapse
-        %ul.nav.navbar-nav.side-nav
-          %li.active
-            %a{:href => "index.html"}
-              %i.fa.fa-fw.fa-dashboard
-              Dashboard
-          %li
-            %a{:href => "charts.html"}
-              %i.fa.fa-fw.fa-bar-chart-o
-              Charts
-          %li
-            %a{:href => "tables.html"}
-              %i.fa.fa-fw.fa-table
-              Tables
-          %li
-            %a{:href => "forms.html"}
-              %i.fa.fa-fw.fa-edit
-              Forms
-          %li
-            %a{:href => "bootstrap-elements.html"}
-              %i.fa.fa-fw.fa-desktop
-              Bootstrap Elements
-          %li
-            %a{:href => "bootstrap-grid.html"}
-              %i.fa.fa-fw.fa-wrench
-              Bootstrap Grid
-          %li
-            %a{"data-target" => "#demo", "data-toggle" => "collapse", :href => "javascript:;"}
-              %i.fa.fa-fw.fa-arrows-v
-              Dropdown
-              %i.fa.fa-fw.fa-caret-down
-            %ul#demo.collapse
+    %p.notice= notice
+    %p.alert= alert
+    #wrapper
+      / Navigation
+      %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-ex1-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "index.html"} Homework Tracker
+        / Top Menu Items
+        %ul.nav.navbar-right.top-nav
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.fa.fa-envelope
+              %b.caret
+            %ul.dropdown-menu.message-dropdown
+              %li.message-preview
+                %a{:href => "#"}
+                  .media
+                    %span.pull-left
+                      %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
+                    .media-body
+                      %h5.media-heading
+                        %strong John Smith
+                      %p.small.text-muted
+                        %i.fa.fa-clock-o
+                        Yesterday at 4:32 PM
+                      %p Lorem ipsum dolor sit amet, consectetur...
+              %li.message-preview
+                %a{:href => "#"}
+                  .media
+                    %span.pull-left
+                      %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
+                    .media-body
+                      %h5.media-heading
+                        %strong John Smith
+                      %p.small.text-muted
+                        %i.fa.fa-clock-o
+                        Yesterday at 4:32 PM
+                      %p Lorem ipsum dolor sit amet, consectetur...
+              %li.message-preview
+                %a{:href => "#"}
+                  .media
+                    %span.pull-left
+                      %img.media-object{:alt => "", :src => "http://placehold.it/50x50"}
+                    .media-body
+                      %h5.media-heading
+                        %strong John Smith
+                      %p.small.text-muted
+                        %i.fa.fa-clock-o
+                        Yesterday at 4:32 PM
+                      %p Lorem ipsum dolor sit amet, consectetur...
+              %li.message-footer
+                %a{:href => "#"} Read All New Messages
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.fa.fa-bell
+              %b.caret
+            %ul.dropdown-menu.alert-dropdown
               %li
-                %a{:href => "#"} Dropdown Item
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-default Alert Badge
               %li
-                %a{:href => "#"} Dropdown Item
-          %li
-            %a{:href => "blank-page.html"}
-              %i.fa.fa-fw.fa-file
-              Blank Page
-      / /.navbar-collapse
-    #page-wrapper
-      .container-fluid
-        / Page Heading
-        .row
-          .col-lg-12
-            %h1.page-header
-              Dashboard
-              %small Statistics Overview
-            %ol.breadcrumb
-              %li.active
-                %i.fa.fa-dashboard
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-primary Alert Badge
+              %li
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-success Alert Badge
+              %li
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-info Alert Badge
+              %li
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-warning Alert Badge
+              %li
+                %a{:href => "#"}
+                  Alert Name
+                  %span.label.label-danger Alert Badge
+              %li.divider
+              %li
+                %a{:href => "#"} View All
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.fa.fa-user
+              John Smith
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-fw.fa-user
+                  Profile
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-fw.fa-envelope
+                  Inbox
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-fw.fa-gear
+                  Settings
+              %li.divider
+              %li
+                %a{:href => "#"}
+                  %i.fa.fa-fw.fa-power-off
+                  Log Out
+        / Sidebar Menu Items - These collapse to the responsive navigation menu on small screens
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          %ul.nav.navbar-nav.side-nav
+            %li.active
+              %a{:href => "index.html"}
+                %i.fa.fa-fw.fa-dashboard
                 Dashboard
-        / /.row
-        .row
-          .col-lg-12
-            .alert.alert-info.alert-dismissable
-              %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
-              %i.fa.fa-info-circle
-              %strong Like SB Admin?
-              Try out
-              %a.alert-link{:href => "http://startbootstrap.com/template-overviews/sb-admin-2"} SB Admin 2
-              for additional features!
-        / /.row
-        .row
-          .col-lg-3.col-md-6
-            .panel.panel-primary
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-comments.fa-5x
-                  .col-xs-9.text-right
-                    .huge 26
-                    %div New Comments!
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-green
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-tasks.fa-5x
-                  .col-xs-9.text-right
-                    .huge 12
-                    %div New Tasks!
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-yellow
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-shopping-cart.fa-5x
-                  .col-xs-9.text-right
-                    .huge 124
-                    %div New Orders!
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-          .col-lg-3.col-md-6
-            .panel.panel-red
-              .panel-heading
-                .row
-                  .col-xs-3
-                    %i.fa.fa-support.fa-5x
-                  .col-xs-9.text-right
-                    .huge 13
-                    %div Support Tickets!
-              %a{:href => "#"}
-                .panel-footer
-                  %span.pull-left View Details
-                  %span.pull-right
-                    %i.fa.fa-arrow-circle-right
-                  .clearfix
-        / /.row
-        .row
-          .col-lg-12
-            .panel.panel-default
-              .panel-heading
-                %h3.panel-title
-                  %i.fa.fa-bar-chart-o.fa-fw
-                  Area Chart
-              .panel-body
-                #morris-area-chart{:style => "position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                  %svg{:height => "352", :style => "overflow: hidden; position: relative;", :version => "1.1", :width => "868", :xmlns => "http://www.w3.org/2000/svg"}
-                    %desc{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} Created with RaphaÃ«l 2.1.2
-                    %defs{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "end", :x => "48.5", :y => "317.984375"}
-                      %tspan{:dy => "4.1640625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 0
-                    %path{:d => "M61,317.984375H843", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "end", :x => "48.5", :y => "244.73828125"}
-                      %tspan{:dy => "4.16015625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 7,500
-                    %path{:d => "M61,244.73828125H843", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "end", :x => "48.5", :y => "171.4921875"}
-                      %tspan{:dy => "4.15625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 15,000
-                    %path{:d => "M61,171.4921875H843", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "end", :x => "48.5", :y => "98.24609375"}
-                      %tspan{:dy => "4.16015625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 22,500
-                    %path{:d => "M61,98.24609375H843", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "end", :x => "48.5", :y => "25"}
-                      %tspan{:dy => "4.1640625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 30,000
-                    %path{:d => "M61,25H843", :fill => "none", :stroke => "#aaaaaa", "stroke-width" => "0.5", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "middle", :transform => "matrix(1,0,0,1,0,7.0078)", :x => "698.6045769834438", :y => "330.484375"}
-                      %tspan{:dy => "4.1640625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 2012
-                    %text{:fill => "#888888", :font => "10px &quot;Arial&quot;", "font-family" => "sans-serif", "font-size" => "12px", "font-weight" => "normal", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-family: sans-serif;", "text-anchor" => "middle", :transform => "matrix(1,0,0,1,0,7.0078)", :x => "351.7704926332844", :y => "330.484375"}
-                      %tspan{:dy => "4.1640625", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 2011
-                    %path{:d => "M61,266.0968421875C82.8454002328996,260.72546197916665,126.53620069869879,249.57750218104118,148.3816009315984,244.61132135416665C170.23689939749886,239.64289033208286,213.94749632929978,233.15685945135255,235.80279479520024,226.35839479166668C257.4304339020809,219.63074747218587,300.68571211584225,192.5143137042398,322.31335122272293,190.50687343750002C343.6935345045821,188.5224015948648,386.45390106830035,208.93072208836634,407.8340843501595,210.39074635416665C429.6794845830591,211.88253966649134,473.3702850488583,201.3206634862802,495.2156852817579,202.31414375C517.0709837476584,203.30807416336353,560.7815806794594,235.97590090804974,582.6368791453598,218.34038906249998C604.2645182522405,200.8885804653414,647.5197964660017,70.47800616083006,669.1474355728824,61.96486197916664C690.7651764467622,53.45561397333007,734.0006581945217,137.7682713921231,755.6183990684016,150.2508203125C777.4637993013012,162.86482464733143,821.1545997671004,159.326011328125,843,162.351075L843,317.984375L61,317.984375Z", :fill => "#7cb47c", "fill-opacity" => "1", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"}
-                    %path{:d => "M61,266.0968421875C82.8454002328996,260.72546197916665,126.53620069869879,249.57750218104118,148.3816009315984,244.61132135416665C170.23689939749886,239.64289033208286,213.94749632929978,233.15685945135255,235.80279479520024,226.35839479166668C257.4304339020809,219.63074747218587,300.68571211584225,192.5143137042398,322.31335122272293,190.50687343750002C343.6935345045821,188.5224015948648,386.45390106830035,208.93072208836634,407.8340843501595,210.39074635416665C429.6794845830591,211.88253966649134,473.3702850488583,201.3206634862802,495.2156852817579,202.31414375C517.0709837476584,203.30807416336353,560.7815806794594,235.97590090804974,582.6368791453598,218.34038906249998C604.2645182522405,200.8885804653414,647.5197964660017,70.47800616083006,669.1474355728824,61.96486197916664C690.7651764467622,53.45561397333007,734.0006581945217,137.7682713921231,755.6183990684016,150.2508203125C777.4637993013012,162.86482464733143,821.1545997671004,159.326011328125,843,162.351075", :fill => "none", :stroke => "#4da74d", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "61", :cy => "266.0968421875", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "148.3816009315984", :cy => "244.61132135416665", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "235.80279479520024", :cy => "226.35839479166668", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "322.31335122272293", :cy => "190.50687343750002", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "407.8340843501595", :cy => "210.39074635416665", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "495.2156852817579", :cy => "202.31414375", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "582.6368791453598", :cy => "218.34038906249998", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "669.1474355728824", :cy => "61.96486197916664", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "755.6183990684016", :cy => "150.2508203125", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "843", :cy => "162.351075", :fill => "#4da74d", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %path{:d => "M61,291.94783020833336C82.8454002328996,286.07349348958337,126.53620069869879,273.5948559519807,148.3816009315984,268.45048333333335C170.23689939749886,263.30377978010574,213.94749632929978,253.59617552083333,235.80279479520024,250.78352552083334C257.4304339020809,248.00017395833333,300.68571211584225,248.32929813018436,322.31335122272293,246.06647708333333C343.6935345045821,243.829546437476,386.45390106830035,235.92314825108772,407.8340843501595,232.78451875000002C429.6794845830591,229.5775949958794,473.3702850488583,220.5512304645326,495.2156852817579,220.6842640625C517.0709837476584,220.81735793849094,560.7815806794594,247.44227648614748,582.6368791453598,233.84902864583333C604.2645182522405,220.39737713718915,647.5197964660017,120.48054988448445,669.1474355728824,112.50466666666668C690.7651764467622,104.53243373865112,734.0006581945217,161.68345628878672,755.6183990684016,170.0565640625C777.4637993013012,178.51785016899507,821.1545997671004,177.39582265625,843,179.8422421875L843,317.984375L61,317.984375Z", :fill => "#a7b3bc", "fill-opacity" => "1", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"}
-                    %path{:d => "M61,291.94783020833336C82.8454002328996,286.07349348958337,126.53620069869879,273.5948559519807,148.3816009315984,268.45048333333335C170.23689939749886,263.30377978010574,213.94749632929978,253.59617552083333,235.80279479520024,250.78352552083334C257.4304339020809,248.00017395833333,300.68571211584225,248.32929813018436,322.31335122272293,246.06647708333333C343.6935345045821,243.829546437476,386.45390106830035,235.92314825108772,407.8340843501595,232.78451875000002C429.6794845830591,229.5775949958794,473.3702850488583,220.5512304645326,495.2156852817579,220.6842640625C517.0709837476584,220.81735793849094,560.7815806794594,247.44227648614748,582.6368791453598,233.84902864583333C604.2645182522405,220.39737713718915,647.5197964660017,120.48054988448445,669.1474355728824,112.50466666666668C690.7651764467622,104.53243373865112,734.0006581945217,161.68345628878672,755.6183990684016,170.0565640625C777.4637993013012,178.51785016899507,821.1545997671004,177.39582265625,843,179.8422421875", :fill => "none", :stroke => "#7a92a3", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "61", :cy => "291.94783020833336", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "148.3816009315984", :cy => "268.45048333333335", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "235.80279479520024", :cy => "250.78352552083334", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "322.31335122272293", :cy => "246.06647708333333", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "407.8340843501595", :cy => "232.78451875000002", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "495.2156852817579", :cy => "220.6842640625", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "582.6368791453598", :cy => "233.84902864583333", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "669.1474355728824", :cy => "112.50466666666668", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "755.6183990684016", :cy => "170.0565640625", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "843", :cy => "179.8422421875", :fill => "#7a92a3", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %path{:d => "M61,291.94783020833336C82.8454002328996,291.67437812500003,126.53620069869879,293.59524628816297,148.3816009315984,290.854021875C170.23689939749886,288.1115554027463,213.94749632929978,271.226727595986,235.80279479520024,270.01306666666665C257.4304339020809,268.81204803869434,300.68571211584225,283.5256532643484,322.31335122272293,281.19530364583335C343.6935345045821,278.89161706643176,386.45390106830035,253.77504112877835,407.8340843501595,251.47692187500002C429.6794845830591,249.12879724857,473.3702850488583,260.1815495933017,495.2156852817579,262.610328125C517.0709837476584,265.04020714538507,560.7815806794594,282.45053460951135,582.6368791453598,270.91155208333333C604.2645182522405,259.49276729180303,647.5197964660017,177.94314538799043,669.1474355728824,170.77925885416667C690.7651764467622,163.61865098694878,734.0006581945217,205.54891766622544,755.6183990684016,213.6135744791667C777.4637993013012,221.76316128601712,821.1545997671004,230.1305686197917,843,235.63623333333334L843,317.984375L61,317.984375Z", :fill => "#2577b5", "fill-opacity" => "1", :stroke => "none", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"}
-                    %path{:d => "M61,291.94783020833336C82.8454002328996,291.67437812500003,126.53620069869879,293.59524628816297,148.3816009315984,290.854021875C170.23689939749886,288.1115554027463,213.94749632929978,271.226727595986,235.80279479520024,270.01306666666665C257.4304339020809,268.81204803869434,300.68571211584225,283.5256532643484,322.31335122272293,281.19530364583335C343.6935345045821,278.89161706643176,386.45390106830035,253.77504112877835,407.8340843501595,251.47692187500002C429.6794845830591,249.12879724857,473.3702850488583,260.1815495933017,495.2156852817579,262.610328125C517.0709837476584,265.04020714538507,560.7815806794594,282.45053460951135,582.6368791453598,270.91155208333333C604.2645182522405,259.49276729180303,647.5197964660017,177.94314538799043,669.1474355728824,170.77925885416667C690.7651764467622,163.61865098694878,734.0006581945217,205.54891766622544,755.6183990684016,213.6135744791667C777.4637993013012,221.76316128601712,821.1545997671004,230.1305686197917,843,235.63623333333334", :fill => "none", :stroke => "#0b62a4", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "61", :cy => "291.94783020833336", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "148.3816009315984", :cy => "290.854021875", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "235.80279479520024", :cy => "270.01306666666665", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "322.31335122272293", :cy => "281.19530364583335", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "407.8340843501595", :cy => "251.47692187500002", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "495.2156852817579", :cy => "262.610328125", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "582.6368791453598", :cy => "270.91155208333333", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "669.1474355728824", :cy => "170.77925885416667", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "755.6183990684016", :cy => "213.6135744791667", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %circle{:cx => "843", :cy => "235.63623333333334", :fill => "#0b62a4", :r => "2", :stroke => "#ffffff", "stroke-width" => "1", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                  .morris-hover.morris-default-style{:style => "display: none;"}
-        / /.row
-        .row
-          .col-lg-4
-            .panel.panel-default
-              .panel-heading
-                %h3.panel-title
-                  %i.fa.fa-long-arrow-right.fa-fw
-                  Donut Chart
-              .panel-body
-                #morris-donut-chart
-                  %svg{:height => "352", :style => "overflow: hidden; position: relative;", :version => "1.1", :width => "868", :xmlns => "http://www.w3.org/2000/svg"}
-                    %desc{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} Created with RaphaÃ«l 2.1.2
-                    %defs{:style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %path{:d => "M434,290.8333333333333A112.33333333333333,112.33333333333333,0,0,0,540.0483986027914,215.54746862555191", :fill => "none", :opacity => "0", :stroke => "#0b62a4", "stroke-width" => "2", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"}
-                    %path{:d => "M434,293.8333333333333A115.33333333333333,115.33333333333333,0,0,0,542.8805516812042,216.53686689745092L588.352342773499,232.4222058184962A163.5,163.5,0,0,1,434,342Z", :fill => "#0b62a4", :stroke => "#ffffff", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %path{:d => "M540.0483986027914,215.54746862555191A112.33333333333333,112.33333333333333,0,0,0,333.2283200115836,128.86285372737538", :fill => "none", :opacity => "1", :stroke => "#3980b5", "stroke-width" => "2", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"}
-                    %path{:d => "M542.8805516812042,216.53686689745092A115.33333333333333,115.33333333333333,0,0,0,330.5370882018039,127.53723261030231L282.84248001737535,104.04428059106306A168.5,168.5,0,0,1,593.072597904187,234.07120293832787Z", :fill => "#3980b5", :stroke => "#ffffff", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %path{:d => "M333.2283200115836,128.86285372737538A112.33333333333333,112.33333333333333,0,0,0,433.96470944310516,290.8333277899054", :fill => "none", :opacity => "0", :stroke => "#679dc6", "stroke-width" => "2", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"}
-                    %path{:d => "M330.5370882018039,127.53723261030231A115.33333333333333,115.33333333333333,0,0,0,433.9637669653246,293.8333276418614L433.94863496095877,341.9999919315983A163.5,163.5,0,0,1,287.32786636700814,106.25364911951816Z", :fill => "#679dc6", :stroke => "#ffffff", "stroke-width" => "3", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"}
-                    %text{:fill => "#000000", :font => "10px &quot;Arial&quot;", "font-size" => "15px", "font-weight" => "800", :stroke => "none", "stroke-width" => "0.4945598417408507", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-size: 15px; line-height: normal; font-family: Arial;", "text-anchor" => "middle", :transform => "matrix(2.022,0,0,2.022,-443.548,-180.7822)", :x => "434", :y => "168.5"}
-                      %tspan{:dy => "5.203125", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} In-Store Sales
-                    %text{:fill => "#000000", :font => "10px &quot;Arial&quot;", "font-size" => "14px", :stroke => "none", "stroke-width" => "0.41811943620178044", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-family: Arial;", "text-anchor" => "middle", :transform => "matrix(2.3917,0,0,2.3917,-603.9809,-251.434)", :x => "434", :y => "188.5"}
-                      %tspan{:dy => "4.859375", :style => "-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"} 30
-                .text-right
-                  %a{:href => "#"}
-                    View Details
-                    %i.fa.fa-arrow-circle-right
-          .col-lg-4
-            .panel.panel-default
-              .panel-heading
-                %h3.panel-title
-                  %i.fa.fa-clock-o.fa-fw
-                  Tasks Panel
-              .panel-body
-                .list-group
-                  %a.list-group-item{:href => "#"}
-                    %span.badge just now
-                    %i.fa.fa-fw.fa-calendar
-                    Calendar updated
-                  %a.list-group-item{:href => "#"}
-                    %span.badge 4 minutes ago
-                    %i.fa.fa-fw.fa-comment
-                    Commented on a post
-                  %a.list-group-item{:href => "#"}
-                    %span.badge 23 minutes ago
-                    %i.fa.fa-fw.fa-truck
-                    Order 392 shipped
-                  %a.list-group-item{:href => "#"}
-                    %span.badge 46 minutes ago
-                    %i.fa.fa-fw.fa-money
-                    Invoice 653 has been paid
-                  %a.list-group-item{:href => "#"}
-                    %span.badge 1 hour ago
-                    %i.fa.fa-fw.fa-user
-                    A new user has been added
-                  %a.list-group-item{:href => "#"}
-                    %span.badge 2 hours ago
-                    %i.fa.fa-fw.fa-check
-                    Completed task: "pick up dry cleaning"
-                  %a.list-group-item{:href => "#"}
-                    %span.badge yesterday
-                    %i.fa.fa-fw.fa-globe
-                    Saved the world
-                  %a.list-group-item{:href => "#"}
-                    %span.badge two days ago
-                    %i.fa.fa-fw.fa-check
-                    Completed task: "fix error on sales page"
-                .text-right
-                  %a{:href => "#"}
-                    View All Activity
-                    %i.fa.fa-arrow-circle-right
-          .col-lg-4
-            .panel.panel-default
-              .panel-heading
-                %h3.panel-title
-                  %i.fa.fa-money.fa-fw
-                  Transactions Panel
-              .panel-body
-                .table-responsive
-                  %table.table.table-bordered.table-hover.table-striped
-                    %thead
-                      %tr
-                        %th Order #
-                        %th Order Date
-                        %th Order Time
-                        %th Amount (USD)
-                    %tbody
-                      %tr
-                        %td 3326
-                        %td 10/21/2013
-                        %td 3:29 PM
-                        %td $321.33
-                      %tr
-                        %td 3325
-                        %td 10/21/2013
-                        %td 3:20 PM
-                        %td $234.34
-                      %tr
-                        %td 3324
-                        %td 10/21/2013
-                        %td 3:03 PM
-                        %td $724.17
-                      %tr
-                        %td 3323
-                        %td 10/21/2013
-                        %td 3:00 PM
-                        %td $23.71
-                      %tr
-                        %td 3322
-                        %td 10/21/2013
-                        %td 2:49 PM
-                        %td $8345.23
-                      %tr
-                        %td 3321
-                        %td 10/21/2013
-                        %td 2:23 PM
-                        %td $245.12
-                      %tr
-                        %td 3320
-                        %td 10/21/2013
-                        %td 2:15 PM
-                        %td $5663.54
-                      %tr
-                        %td 3319
-                        %td 10/21/2013
-                        %td 2:13 PM
-                        %td $943.45
-                .text-right
-                  %a{:href => "#"}
-                    View All Transactions
-                    %i.fa.fa-arrow-circle-right
-        / /.row
-      / /.container-fluid
-    / /#page-wrapper
-  / /#wrapper
-  / jQuery Version 1.11.0
-  %script{:src => "js/jquery-1.11.0.js"}
-  / Bootstrap Core JavaScript
-  %script{:src => "js/bootstrap.min.js"}
-  / Morris Charts JavaScript
-  %script{:src => "js/plugins/morris/raphael.min.js"}
-  %script{:src => "js/plugins/morris/morris.min.js"}
-  %script{:src => "js/plugins/morris/morris-data.js"}
-    = yield
+            %li
+              %a{:href => "charts.html"}
+                %i.fa.fa-fw.fa-bar-chart-o
+                Charts
+            %li
+              %a{:href => "tables.html"}
+                %i.fa.fa-fw.fa-table
+                Tables
+            %li
+              %a{:href => "forms.html"}
+                %i.fa.fa-fw.fa-edit
+                Forms
+            %li
+              %a{:href => "bootstrap-elements.html"}
+                %i.fa.fa-fw.fa-desktop
+                Bootstrap Elements
+            %li
+              %a{:href => "bootstrap-grid.html"}
+                %i.fa.fa-fw.fa-wrench
+                Bootstrap Grid
+            %li
+              %a{"data-target" => "#demo", "data-toggle" => "collapse", :href => "javascript:;"}
+                %i.fa.fa-fw.fa-arrows-v
+                Dropdown
+                %i.fa.fa-fw.fa-caret-down
+              %ul#demo.collapse
+                %li
+                  %a{:href => "#"} Dropdown Item
+                %li
+                  %a{:href => "#"} Dropdown Item
+            %li
+              %a{:href => "blank-page.html"}
+                %i.fa.fa-fw.fa-file
+                Blank Page
+        / /.navbar-collapse
+      #page-wrapper
+        .container-fluid
+          / Page Heading
+          .row
+            .col-lg-12
+              %h1.page-header
+                Dashboard
+                %small Statistics Overview
+              %ol.breadcrumb
+                %li.active
+                  %i.fa.fa-dashboard
+                  Dashboard
+                =yield
+          
+                / /.row
+        / /.container-fluid
+      / /#page-wrapper
+    / /#wrapper
+    / jQuery Version 1.11.0
+    / %script{:src => "js/jquery-1.11.0.js"}
+    / / Bootstrap Core JavaScript
+    / %script{:src => "js/bootstrap.min.js"}
+    / / Morris Charts JavaScript
+    / %script{:src => "js/plugins/morris/raphael.min.js"}
+    / %script{:src => "js/plugins/morris/morris.min.js"}
+    / %script{:src => "js/plugins/morris/morris-data.js"}

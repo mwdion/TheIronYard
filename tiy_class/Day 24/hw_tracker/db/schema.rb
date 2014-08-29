@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823212301) do
+ActiveRecord::Schema.define(version: 20140829191600) do
+
+  create_table "comments", force: true do |t|
+    t.text     "content"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+  end
+
+  create_table "locations", force: true do |t|
+    t.string   "city"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "models", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +49,45 @@ ActiveRecord::Schema.define(version: 20140823212301) do
   add_index "models", ["email"], name: "index_models_on_email", unique: true, using: :btree
   add_index "models", ["reset_password_token"], name: "index_models_on_reset_password_token", unique: true, using: :btree
 
+  create_table "programs", force: true do |t|
+    t.integer  "unit_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.text     "description"
+    t.text     "requirements"
+    t.string   "workflow_state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "unit_id"
+  end
+
+  create_table "transmits", force: true do |t|
+    t.string   "name"
+    t.text     "github_link"
+    t.text     "heroku_link"
+    t.text     "other_link"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "workflow_state"
+  end
+
+  create_table "units", force: true do |t|
+    t.string   "name"
+    t.date     "date"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -44,6 +101,9 @@ ActiveRecord::Schema.define(version: 20140823212301) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

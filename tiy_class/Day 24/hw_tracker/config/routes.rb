@@ -1,10 +1,28 @@
 Rails.application.routes.draw do
   devise_for :users
   devise_for :models
-  get 'welcome/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+resources :locations do
+  resources :units do
+    resources :projects do
+      member do
+        post :create_comment
+        delete :delete_comment
+      end    
+      resources :transmits do
+        member do
+          post :create_comment
+          delete :delete_comment
+          put :submitted
+          put :reviewed
+          put :completed
+          put :unsatisfactory
+        end
+      end
+    end
+  end
+end
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

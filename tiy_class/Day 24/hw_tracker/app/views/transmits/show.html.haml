@@ -1,0 +1,41 @@
+%h1 Commit View
+%ul.put_status
+  =render "workflow_partial", patient: @patient 
+%br
+Name:
+%br
+= @transmit.name
+%br
+GitHub Link:
+%br
+= @transmit.github_link
+%br
+%br
+Heroku Link:
+%br
+= @transmit.heroku_link
+%br
+%br
+Additional URL
+%br
+= @transmit.other_link
+%br
+%br
+Content:
+%br
+= @transmit.content
+%br
+%br
+-@transmit.comments.each do |comment|
+  -if comment.content
+    = @comment.first_name
+    = @comment.last_name
+    = comment.content
+    = link_to "Delete", delete_comment_location_unit_project_transmit_path(@location, @unit, @project, @transmit, comment_id: comment.id), method: :delete
+    %br
+%br
+= form_for @comment, url: create_comment_location_unit_project_transmit_path(@location, @unit, @project, @transmit) do |f|
+  = f.text_area :content, class: 'form-control focusedInput', placeholder: 'Add Comment Here...'
+  %br
+  = f.submit
+

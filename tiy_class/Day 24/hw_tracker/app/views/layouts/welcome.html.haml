@@ -21,11 +21,19 @@
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => "#"} About
+            = link_to "Locations", locations_path
           %li
             %a{:href => "#"} Instructor & TA Login
           %li
             %a{:href => "#"} Student Login 
+            %ul.nav.navbar-nav.navbar-right
+          %li.dropdown
+            %a#download.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Login
+              %span.caret
+            %ul.dropdown-menu{"aria-labelledby" => "download"}
+              %li
+                = user_login_links
       / /.navbar-collapse
     / /.container
   / Header
@@ -59,78 +67,19 @@
         .col-lg-5.col-sm-6
           %hr.section-heading-spacer
             .clearfix
-            %h2.section-heading
-              Death to the Stock Photo:
-              %br Special Thanks
-            %p.lead
-              A special thanks to
-              %a{:href => "http://join.deathtothestockphoto.com/", :target => "_blank"} Death to the Stock Photo
-              for providing the photographs that you see in this template. Visit their website to become a member.
         .col-lg-5.col-lg-offset-2.col-sm-6
-          %img.img-responsive{:alt => "", :src => "img/ipad.png"}
-    / /.container
-  / /.content-section-a
-  .content-section-b
-    .container
-      .row
-        .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
-          %hr.section-heading-spacer
-            .clearfix
-            %h2.section-heading 
-            %p.lead
-        .col-lg-5.col-sm-pull-6.col-sm-6
-          %img.img-responsive{:alt => "", :src => ""}
-    / /.container
-  / /.content-section-b
-  .content-section-a
-    .container
-      .row
-        .col-lg-5.col-sm-6
-          %hr.section-heading-spacer
-            .clearfix
-            %h2.section-heading
-              Google Web Fonts and
-              %br Font Awesome Icons
-            %p.lead
-              This template features the 'Lato' font, part of the
-              = succeed "," do
-                %a{:href => "http://www.google.com/fonts", :target => "_blank"} Google Web Font library
-              as well as
-              = succeed "." do
-                %a{:href => "http://fontawesome.io", :target => "_blank"} icons from Font Awesome
-        .col-lg-5.col-lg-offset-2.col-sm-6
-          %img.img-responsive{:alt => "", :src => "img/phones.png"}
     / /.container
   / /.content-section-a
   .banner
     .container
       .row
-        / .col-lg-6
-        /   %h2 Connect to Start Bootstrap:
-        / .col-lg-6
-        /   %ul.list-inline.banner-social-buttons
-        /     %li
-        /       %a.btn.btn-default.btn-lg{:href => "https://twitter.com/SBootstrap"}
-        /         %i.fa.fa-twitter.fa-fw
-        /         %span.network-name Twitter
-        /     %li
-        /       %a.btn.btn-default.btn-lg{:href => "https://github.com/IronSummitMedia/startbootstrap"}
-        /         %i.fa.fa-github.fa-fw
-        /         %span.network-name Github
-        /     %li
-        /       %a.btn.btn-default.btn-lg{:href => "#"}
-        /         %i.fa.fa-linkedin.fa-fw
-        /         %span.network-name Linkedin
-    / /.container
-  / /.banner
-  / Footer
   %footer
     .container
       .row
         .col-lg-12
           %ul.list-inline
             %li
-              %a{:href => "#home"} Home
+              %a{:href => "#home"} Locations
             %li.footer-menu-divider ⋅
             %li
               %a{:href => "#about"} Instructor & TA Login
@@ -140,7 +89,7 @@
             %li.footer-menu-divider ⋅
             %li
               %a{:href => "#contact"} Contact
-          %p.copyright.text-muted.small Copyright © Your Company 2014. All Rights Reserved
+          %p.copyright.text-muted.small Copyright © Michael Dion 2014. All Rights Reserved
   / jQuery Version 1.11.0
   %script{:src => "js/jquery-1.11.0.js"}
   / Bootstrap Core JavaScript
