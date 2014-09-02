@@ -22,10 +22,6 @@
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to "Locations", locations_path
-          %li
-            %a{:href => "#"} Instructor & TA Login
-          %li
-            %a{:href => "#"} Student Login 
             %ul.nav.navbar-nav.navbar-right
           %li.dropdown
             %a#download.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
@@ -47,27 +43,34 @@
             %hr.intro-divider
               %ul.list-inline.intro-social-buttons
                 %li
-                  %a.btn.btn-default.btn-lg{:href => "https://twitter.com/SBootstrap"}
+                  %a.btn.btn-default.btn-lg{:href => "https://twitter.com/TheIronYard"}
                     %i.fa.fa-twitter.fa-fw
                     %span.network-name Twitter
                 %li
-                  %a.btn.btn-default.btn-lg{:href => "https://github.com/IronSummitMedia/startbootstrap"}
+                  %a.btn.btn-default.btn-lg{:href => "https://www.facebook.com/TheIronYard"}
                     %i.fa.fa-github.fa-fw
-                    %span.network-name Github
+                    %span.network-name Vimeo
                 %li
-                  %a.btn.btn-default.btn-lg{:href => "#"}
+                  %a.btn.btn-default.btn-lg{:href => "https://www.facebook.com/TheIronYard"}
                     %i.fa.fa-linkedin.fa-fw
-                    %span.network-name Linkedin
+                    %span.network-name Facebook
     / /.container
   / /.intro-header
   / Page Content
   .content-section-a
+    .h1 Locations
     .container
+      .h2.ul
+        .li
+        - @locations.each do |location|
+          = link_to "#{location.location_name}", location_path(location)
+          %br
       .row
         .col-lg-5.col-sm-6
           %hr.section-heading-spacer
             .clearfix
         .col-lg-5.col-lg-offset-2.col-sm-6
+       
     / /.container
   / /.content-section-a
   .banner
@@ -78,17 +81,7 @@
       .row
         .col-lg-12
           %ul.list-inline
-            %li
-              %a{:href => "#home"} Locations
-            %li.footer-menu-divider ⋅
-            %li
-              %a{:href => "#about"} Instructor & TA Login
-            %li.footer-menu-divider ⋅
-            %li
-              %a{:href => "#services"} Student Login 
-            %li.footer-menu-divider ⋅
-            %li
-              %a{:href => "#contact"} Contact
+            
           %p.copyright.text-muted.small Copyright © Michael Dion 2014. All Rights Reserved
   / jQuery Version 1.11.0
   %script{:src => "js/jquery-1.11.0.js"}

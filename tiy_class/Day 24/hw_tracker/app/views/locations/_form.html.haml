@@ -7,6 +7,5 @@
         -value.each do |message| 
           = key = message 
           %br
-  = f.text_field :city, class: 'form-control focusedInput', placeholder: 'Add City Here...'
-  = f.text_field :state, class: 'form-control focusedInput', placeholder: 'Add State Here...'
+  = f.text_field :location_name, class: 'form-control focusedInput', placeholder: "Add City, State..."
   =f.submit "Add Location", class: 'btn btn-success btn-block'

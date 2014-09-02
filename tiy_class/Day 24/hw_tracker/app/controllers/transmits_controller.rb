@@ -1,4 +1,5 @@
 class TransmitsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_location
   before_action :find_unit
   before_action :find_project
@@ -17,7 +18,7 @@ class TransmitsController < ApplicationController
   end
 
   def create
-    @transmit = @project.transmits.create transmit_params.merge(user_id: current_user.id, first_name: current_user.first_name, last_name: current_user.last_name)
+    @transmit = @project.transmits.create 
     if @transmit.save == true
     redirect_to location_unit_project_transmits_path(@location, @unit, @project, @transmit)
     else
@@ -39,7 +40,7 @@ class TransmitsController < ApplicationController
   end
 
   def create_comment
-    @comment = @transmit.comments.create comment_params.merge(user_id: current_user.id)
+    @comment = @transmit.comments.create comment_params.merge(user_id: current_user.id, first_name: current_user.first_name, last_name: current_user.last_name)
     redirect_to location_unit_project_transmit_path(@location, @unit, @project, @transmit)
   end
 
@@ -75,7 +76,7 @@ class TransmitsController < ApplicationController
 
   private
   def transmit_params
-    params.require(:transmit).permit(:name, :github_link, :heroku_link, :other_link, :content,)
+    params.require(:transmit).permit(:name, :github_link, :heroku_link, :other_link, :content)
   end
 
   def comment_params

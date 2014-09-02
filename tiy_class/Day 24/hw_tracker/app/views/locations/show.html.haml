@@ -1,7 +1,6 @@
 %h1 Location Profile
 %h2
-= @location.city
-= @location.state
+= @location.location_name
 %br
 - @location.units.each do |unit|
   = link_to "#{unit.name}, #{unit.date}", location_unit_path(@location, unit)

@@ -28,10 +28,12 @@ Content:
 %br
 -@transmit.comments.each do |comment|
   -if comment.content
-    = @comment.first_name
-    = @comment.last_name
+    = comment.first_name
+    = comment.last_name
+    %br
     = comment.content
-    = link_to "Delete", delete_comment_location_unit_project_transmit_path(@location, @unit, @project, @transmit, comment_id: comment.id), method: :delete
+    = link_to "Delete", delete_comment_location_unit_project_path(@location, @unit, @project, comment_id: comment.id), method: :delete
+    %br
     %br
 %br
 = form_for @comment, url: create_comment_location_unit_project_transmit_path(@location, @unit, @project, @transmit) do |f|

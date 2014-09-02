@@ -1,10 +1,12 @@
 class UnitsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource :only => [:update, :destroy, :create]
   before_action :find_location
   before_action :find_unit, only: [:show, :edit, :update, :destroy]
 
   def index
     @units = Unit.all
+    @locations = Location.all
   end
 
   def show

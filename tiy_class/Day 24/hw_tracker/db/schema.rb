@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829191600) do
+ActiveRecord::Schema.define(version: 20140901131950) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20140829191600) do
   end
 
   create_table "locations", force: true do |t|
-    t.string   "city"
-    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location_name"
   end
 
   create_table "models", force: true do |t|
@@ -104,6 +103,7 @@ ActiveRecord::Schema.define(version: 20140829191600) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "role"
+    t.integer  "unit_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

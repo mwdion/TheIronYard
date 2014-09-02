@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  load_and_authorize_resource :only => [:update, :destroy, :create]
+  before_action :authenticate_user!
   before_action :find_location, only: [:show, :edit, :update, :destroy]  
   def index
     @locations = Location.all
@@ -13,6 +13,7 @@ class LocationsController < ApplicationController
   end
 
   def create
+    authorize! :create, @location
     @location = Location.create location_params
     if @location.save == true
     redirect_to locations_path
@@ -25,11 +26,13 @@ class LocationsController < ApplicationController
   end
 
   def update
+    authorize! :update, @location
     @location.update_attributes location_params
     redirect_to locations_path(@location)
   end
 
   def destroy
+    authorize! :destroy, @location
     @location.delete
     redirect_to locations_path(@locations)
   end
@@ -40,7 +43,7 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:city, :state)
+    params.require(:location).permit(:location_name)
   end
 
 end
