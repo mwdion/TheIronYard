@@ -36,6 +36,20 @@ gem 'nested_form'
 gem 'cancan'
 gem 'workflow'
 gem 'devise'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+end
+group :test do
+  gem 'fuubar'
+  gem 'rspec-legacy_formatters'
+  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -31,12 +31,13 @@ gem 'spring',        group: :development
 gem 'haml-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
-
 gem 'workflow'
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+group :development, :test do
+  gem 'rspec-rails'
+end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
