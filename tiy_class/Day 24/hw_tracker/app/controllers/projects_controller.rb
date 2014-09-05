@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource :only => [:update, :destroy, :create]
   before_action :find_location
   before_action :find_unit
   before_action :find_project, only: [:show, :edit, :update, :destroy, :create_comment, :delete_comment]

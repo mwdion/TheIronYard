@@ -18,4 +18,10 @@ RSpec.describe ApplicationHelper, :type => :helper do
       expect(subject.full_name).not_to be("")
     end
   end
+  it { should have_many(:programs)}
+  it { should have_many(:transmits)}
+  it { should have_many(:units).through(:programs) }
+  it { should have_many(:comments)}
+
+
 end

@@ -27,16 +27,7 @@
   %div
     - Unit.all.each do |unit|
       = check_box_tag 'user[unit_ids][]', unit.id, @user.units.include?(unit), {id: "unit_id_#{unit.id}"}
-      = label_tag "unit_id_#{unit.id}", "#{unit.name} | #{unit.location.name}"
-  %br
-    - Location.all.each do |location|
-      = check_box_tag 'location[location_ids][]', location.id, false, {id: "location_id_#{location.id}", class: "location_checkbox", location_id: location.id}
-      = label_tag "location_id_#{location.id}", location.location_name
-      %br
-    - Unit.all.each do |unit|
-      = check_box_tag 'user[unit_ids][]', unit.id, false, {id: "unit_id_#{unit.id}"}
-      = label_tag "unit_id_#{unit.id}", unit.name
-   
+      = label_tag "unit_id_#{unit.id}", "#{unit.name} | #{unit.location.location_name}" 
   %div
     = f.label :role, "Campus Director"
     %br/

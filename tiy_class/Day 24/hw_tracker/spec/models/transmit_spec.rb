@@ -18,4 +18,5 @@ end
   it "should not return an empty string for a project github link object" do
     expect(subject.github_link).not_to be("")
   end
+
 end

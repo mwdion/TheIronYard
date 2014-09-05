@@ -1,6 +1,5 @@
 class UnitsController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource :only => [:update, :destroy, :create]
   before_action :find_location
   before_action :find_unit, only: [:show, :edit, :update, :destroy]
 
@@ -35,7 +34,7 @@ class UnitsController < ApplicationController
 
   def destroy
     @unit.delete
-    redirect_to location_path(@locations)
+    redirect_to location_path(@location)
   end
 
   private

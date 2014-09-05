@@ -35,7 +35,7 @@
   %div
     - Unit.all.each do |unit|
       = check_box_tag 'user[unit_ids][]', unit.id, @user.units.include?(unit), {id: "unit_id_#{unit.id}"}
-      = label_tag "unit_id_#{unit.id}", "#{unit.name} | #{unit.location.name}"
+      = label_tag "unit_id_#{unit.id}", "#{unit.name} | #{unit.location.location_name}"
   %br
    
   %div
