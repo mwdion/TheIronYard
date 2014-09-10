@@ -11,15 +11,15 @@ default: &default
 
 development:
   <<: *default
-  database: Patient_Tracker_Development
+  database: test_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: Patient_Tracker_Test
+  database: test_test
 
 production:
   <<: *default
-  database: Patient_Tracker_Production
+  database: test_production

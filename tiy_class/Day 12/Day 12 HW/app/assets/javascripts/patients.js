@@ -43,7 +43,7 @@ $(document).ready(function() {
     console.log("hi")
     var workflow_state = $(this).attr("workflow_state")
     $.ajax({
-      url: "/hospitals/"+ hospital_id +"/patients/"+ patient_id + "/" + workflow_state,
+      url: "/hospitals/"+ hospital_id +"/patients/"+ patient_id + "/" +workflow_state,
       type: "put",
       dataType: "script",
     })

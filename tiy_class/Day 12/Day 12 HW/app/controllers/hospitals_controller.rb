@@ -58,7 +58,7 @@ before_action :find_doctor, only: [:delete_doctor]
     @doctor = Doctor.find params[:doctor_id]
   end
   def hospital_params
-    params.require(:hospital).permit(:name, :description)
+    params.require(:hospital).permit(:name, :description, :address)
   end
   def doctor_params
     params.require(:doctor).permit(:name)

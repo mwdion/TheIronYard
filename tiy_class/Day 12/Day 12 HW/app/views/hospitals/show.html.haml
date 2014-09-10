@@ -1,6 +1,9 @@
 %h1 Hospital Profile
 %h4 Name: #{@hospital.name}
 %h4 Description: #{@hospital.description}
+%h4 Location: 
+%img{:src => "http://maps.googleapis.com/maps/api/staticmap?center=#{@hospital.latitude},#{@hospital.longitude}&zoom=11&size=800x200"}/
+%br
 = link_to "| Edit Hospital |", edit_hospital_path(@hospital), class: "btn btn-xs btn-warning"
 = link_to "| Delete Hospital |", hospital_path(@hospital), method: :delete, class: "btn btn-xs btn-danger"
 %br
