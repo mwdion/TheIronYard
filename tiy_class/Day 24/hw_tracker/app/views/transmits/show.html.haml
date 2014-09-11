@@ -1,6 +1,10 @@
 %h1 Commit View
-%ul.put_status
-  =render "workflow_partial", patient: @patient 
+%ul.status_list
+  =render "workflow_partial", transmit: @transmit 
+%input{type: "hidden", value: @location.id, class: "location_id"}
+%input{type: "hidden", value: @unit.id, class: "unit_id"}
+%input{type: "hidden", value: @project.id, class: "project_id"}
+%input{type: "hidden", value: @transmit.id, class: "transmit_id"}
 %br
 Name:
 %br

@@ -16,5 +16,8 @@ class Transmit < ActiveRecord::Base
     state :completed do
       event :incomplete, transitions_to: :unsatisfactory
     end
+    state :unsatisfactory do
+      event :complete, transitions_to: :completed
+    end
   end
 end

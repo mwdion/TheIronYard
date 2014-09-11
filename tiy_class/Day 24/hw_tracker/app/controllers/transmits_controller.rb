@@ -3,7 +3,7 @@ class TransmitsController < ApplicationController
   before_action :find_location
   before_action :find_unit
   before_action :find_project
-  before_action :find_transmit, only:[:show, :edit, :update, :destroy, :create_comment, :delete_comment]
+  before_action :find_transmit, only:[:show, :edit, :update, :destroy, :create_comment, :delete_comment, :reviewed, :completed, :unsatisfactory]
   before_action :find_comment, only:[:delete_comment]
   def index
     @transmits = Transmit.all
@@ -18,7 +18,7 @@ class TransmitsController < ApplicationController
   end
 
   def create
-    @transmit = @project.transmits.create 
+    @transmit = @project.transmits.create transmit_params
     if @transmit.save == true
     redirect_to location_unit_project_transmits_path(@location, @unit, @project, @transmit)
     else
@@ -50,7 +50,7 @@ class TransmitsController < ApplicationController
   end
 
   def reviewed
-    @transmit.reviewed!
+    @transmit.reviewing!
     respond_to do |format|
       format.js
       format.html { redirect_to location_unit_project_transmit(@location, @unit, @project, @transmit) }
@@ -58,7 +58,7 @@ class TransmitsController < ApplicationController
   end
 
   def completed
-    @transmit.completed!
+    @transmit.complete!
     respond_to do |format|
       format.js
       format.html { redirect_to location_unit_project_transmit(@location, @unit, @project, @transmit) }
@@ -66,7 +66,7 @@ class TransmitsController < ApplicationController
   end
 
   def unsatisfactory
-    @transmit.unsatisfactory!
+    @transmit.incomplete!
     respond_to do |format|
       format.js
       format.html { redirect_to location_unit_project_transmit(@location, @unit, @project, @transmit) }
@@ -76,7 +76,7 @@ class TransmitsController < ApplicationController
 
   private
   def transmit_params
-    params.require(:transmit).permit(:name, :github_link, :heroku_link, :other_link, :content)
+    params.require(:transmit).permit(:name, :github_link, :heroku_link, :other_link, :content, :workflow_sate)
   end
 
   def comment_params

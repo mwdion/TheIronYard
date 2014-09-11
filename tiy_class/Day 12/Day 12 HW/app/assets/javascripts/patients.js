@@ -36,8 +36,7 @@ $(document).ready(function() {
     $(".group_" + new_page).removeClass("hidden")
    })
   })
-$(document).ready(function() {
-  $(".put_status").click(function (){
+$(document).on("click", '.put_status', function() {
     var hospital_id = $(".hospital_id").val()
     var patient_id = $(".patient_id").val()
     console.log("hi")
@@ -47,5 +46,4 @@ $(document).ready(function() {
       type: "put",
       dataType: "script",
     })
-  })
   })

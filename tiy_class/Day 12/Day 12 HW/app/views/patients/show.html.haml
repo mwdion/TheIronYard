@@ -4,7 +4,7 @@
 %p Gender: #{@patient.gender}
 %p Date of Birth: #{@patient.DOB}
 %p Notes: #{@patient.description}
-%ul.put_status
+%ul.status_list
   =render "workflow_partial", patient: @patient 
 %input{type: "hidden", value: @hospital.id, class: "hospital_id"}
 %input{type: "hidden", value: @patient.id, class: "patient_id"}
