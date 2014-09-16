@@ -10,7 +10,6 @@
     = link_to "Delete", location_unit_project_path(@location, @unit, project), method: :delete, class: 'btn btn-xs btn-danger'
   %br
 %br  
-= can? :create, Project
 -if can? :create, Project
   = link_to "Add Project", new_location_unit_project_path(@location, @unit), class: 'btn btn-info btn-block'
 %br

@@ -11,6 +11,9 @@ class Ability
       can :crud, Project
       can :crud, :transmits
       can :crud, :comments
+      can :reviewed, :transmits
+      can :completed, :transmits
+      can :unsatisfactory, :transmits
     else user.role == "Student"
       can :crud, :transmits
       can :crud, :comments

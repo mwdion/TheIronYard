@@ -44,4 +44,19 @@ Content:
   = f.text_area :content, class: 'form-control focusedInput', placeholder: 'Add Comment Here...'
   %br
   = f.submit
+  %br
+%ul.breadcrumb
+  %li
+    =link_to "Home", root_path
+  %li
+    %a{:href => "/locations"} Location Portal
+  %li
+    = link_to 'Location Profile', location_path(@location)
+  %li
+    = link_to 'Unit Portal', location_units_path(@location)
+  %li
+    = link_to 'Unit Profile', location_unit_path(@location, @unit)
+  %li
+    = link_to 'Project Profile', location_unit_project_path(@location, @unit, @project)
+  %li.active Commit View
 

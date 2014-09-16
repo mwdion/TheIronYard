@@ -1,0 +1,31 @@
+%div{ ng: {controller: "IndexCtrl"}}
+  %h1
+    {{ title }}
+  %div.col-xs-6
+    %label 
+    %input{ type: "text", placeholder: "0", ng: {model: 'calculatorNumber'}, }
+    %br
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(7)' }} 7
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(8)' }} 8
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(9)' }} 9
+    %br
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(6)' }} 6
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(5)' }} 5
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(4)' }} 4
+    %br
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(3)' }} 3
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(2)' }} 2
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(1)' }} 1
+    %br
+    %button.btn.btn-lg.label.label-primary{ng: { click: 'enterNumber(0)' }} 0
+    %br
+    %button.btn.btn-lg.label.label-success{ng: { click: 'addNumber("")' }} +
+    %button.btn.btn-lg.label.label-success{ng: { click: 'subtractNumber("-")' }} -
+    %button.btn.btn-lg.label.label-success.a{ng: { click: 'equalNumber("=")' }} =
+
+
+
+
+
+
+

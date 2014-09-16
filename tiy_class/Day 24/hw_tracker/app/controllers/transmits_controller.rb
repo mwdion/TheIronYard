@@ -50,6 +50,7 @@ class TransmitsController < ApplicationController
   end
 
   def reviewed
+    authorize! :reviewed, @transmit
     @transmit.reviewing!
     respond_to do |format|
       format.js
@@ -58,6 +59,7 @@ class TransmitsController < ApplicationController
   end
 
   def completed
+    authorize! :completed, @transmit
     @transmit.complete!
     respond_to do |format|
       format.js
@@ -66,6 +68,7 @@ class TransmitsController < ApplicationController
   end
 
   def unsatisfactory
+    authorize! :unsatisfactory, @transmit
     @transmit.incomplete!
     respond_to do |format|
       format.js
